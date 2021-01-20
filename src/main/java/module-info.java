@@ -1,5 +1,4 @@
-module ca.dauqui {
+module ca.dauqui.tablikepane {
     requires javafx.controls;
     exports ca.dauqui.tablikepane;
-    exports ca.dauqui to javafx.graphics;
 }

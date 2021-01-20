@@ -1,7 +1,8 @@
-package ca.dauqui;
+package ca.dauqui.test;
 
 import ca.dauqui.tablikepane.*;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 
 public class PlayArea extends Scene {
@@ -13,9 +14,14 @@ public class PlayArea extends Scene {
         super(new StackPane());
         var root = (StackPane)getRoot();
 
+        var javaVersion = SystemInfo.javaVersion();
+        var javafxVersion = SystemInfo.javafxVersion();
+
+        var label = new Label("Hello, JavaFX " + javafxVersion + ", running on Java " + javaVersion + ".");
+
         TabPaneLike tpl = new TabPaneLike(TabPaneLike.TabSide.LEFT, new RoundButtonTabLabelCreator());
 
-        TabLike tab1 = new SimpleTabLike("First", new StackPane());
+        TabLike tab1 = new SimpleTabLike("First", new StackPane(label));
         TabLike tab2 = new SimpleTabLike("Second", new StackPane());
 
         tpl.add(tab1);

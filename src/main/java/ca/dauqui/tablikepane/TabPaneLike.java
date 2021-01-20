@@ -28,6 +28,10 @@ public class TabPaneLike extends Pane {
     private TabLabel selected;
     private final TabLabelCreator tabLabelCreator;
 
+    public TabPaneLike(TabSide side){
+        this(side, new ButtonTabLabelCreator());
+    }
+
     /**
      * Creates a TabLikePane with the button showing on the given side
      * @param side The side on which the button should show

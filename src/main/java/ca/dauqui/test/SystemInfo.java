@@ -1,4 +1,4 @@
-package ca.dauqui;
+package ca.dauqui.test;
 
 public class SystemInfo {
 

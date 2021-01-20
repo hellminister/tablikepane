@@ -40,8 +40,13 @@ public abstract class TabLike extends Pane {
      * attach the size of this tab to the size of the container's content pane
      */
     void attachTo(){
-        Utilities.attach(basePane, container.getContentPaneWidthProperty(),
-                container.getContentPaneHeightProperty());
+        basePane.maxWidthProperty().bind(container.getContentPaneWidthProperty());
+        basePane.minWidthProperty().bind(container.getContentPaneWidthProperty());
+        basePane.prefWidthProperty().bind(container.getContentPaneWidthProperty());
+
+        basePane.maxHeightProperty().bind(container.getContentPaneHeightProperty());
+        basePane.minHeightProperty().bind(container.getContentPaneHeightProperty());
+        basePane.prefHeightProperty().bind(container.getContentPaneHeightProperty());
     }
 
 
